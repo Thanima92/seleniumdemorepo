@@ -1,0 +1,25 @@
+<Configuration status="WARN">
+	<Properties>
+		<Property name="basePath">./logs</Property>
+	</Properties>
+	<Appenders>
+		<!--  Console Appender  -->
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n" />
+		</Console>
+		<!--  Rolling File Appender with size-based rollover  -->
+		<RollingFile name="File" fileName="${basePath}/prints.log"
+			filePattern="${basePath}/prints-%d{yyyy-MM-dd}.log">
+			<PatternLayout
+				pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+			<SizeBasedTriggeringPolicy size="1000" />
+		</RollingFile>
+	</Appenders>
+	<Loggers>
+		<!--  Root Logger Configuration  -->
+		<Root level="all">
+			<AppenderRef ref="File" />
+		</Root>
+	</Loggers>
+</Configuration>

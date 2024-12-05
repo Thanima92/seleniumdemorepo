@@ -1,0 +1,2 @@
+14:02:21.443 [TestNG-tests-4] DEBUG tests.LoginTest - User didn't log in
+14:02:21.523 [TestNG-tests-4] DEBUG tests.LoginTest - Browser got closed
